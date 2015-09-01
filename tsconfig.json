@@ -20,7 +20,8 @@
         "!./node_modules/**/*"
     ],
     "files": [
-        "./test.ts"
+        "./angular.d.ts",
+        "./app.ts"
     ],
-    "compileOnSave"
+    "compileOnSave": true
 }
