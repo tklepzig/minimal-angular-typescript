@@ -1,13 +1,15 @@
-/// <reference path='angular.d.ts' />
+/// <reference path="angular.d.ts"/>
 var myModule;
 (function (myModule) {
     'use strict';
-    angular.module('minApp', [])
-        .controller('HomeController', HomeController);
     var HomeController = (function () {
-        function HomeController() {
+        function HomeController($scope) {
+            $scope.greeting = 'Welcome';
         }
+        HomeController.$inject = ['$scope'];
         return HomeController;
     })();
     myModule.HomeController = HomeController;
+    angular.module('minApp', [])
+        .controller('HomeController', HomeController);
 })(myModule || (myModule = {}));
